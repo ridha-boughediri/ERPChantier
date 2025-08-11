@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ERPChantier.MainPage"
+             Title="Tableau de bord"
+             BackgroundColor="{StaticResource MessengerBackground}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            
+            <!-- Header avec salutation -->
+            <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20">
+                <StackLayout>
+                    <Label Text="Bonjour ! 👋" 
+                           FontSize="24" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource MessengerTextDark}" />
+                    <Label Text="Bienvenue sur votre ERP Chantier" 
+                           FontSize="16" 
+                           TextColor="{StaticResource MessengerTextSecondary}" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Statistiques rapides -->
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="10" RowSpacing="10">
+                
+                <!-- Chantiers actifs -->
+                <Frame Grid.Column="0" Grid.Row="0" 
+                       BackgroundColor="{StaticResource MessengerBlue}" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="15">
+                    <StackLayout>
+                        <Label Text="🏗️" FontSize="30" HorizontalOptions="Center" />
+                        <Label Text="5" 
+                               FontSize="28" 
+                               FontAttributes="Bold" 
+                               TextColor="White" 
+                               HorizontalOptions="Center" />
+                        <Label Text="Chantiers actifs" 
+                               FontSize="12" 
+                               TextColor="White" 
+                               HorizontalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <!-- Messages non lus -->
+                <Frame Grid.Column="1" Grid.Row="0" 
+                       BackgroundColor="#FF6B35" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="15">
+                    <StackLayout>
+                        <Label Text="💬" FontSize="30" HorizontalOptions="Center" />
+                        <Label Text="12" 
+                               FontSize="28" 
+                               FontAttributes="Bold" 
+                               TextColor="White" 
+                               HorizontalOptions="Center" />
+                        <Label Text="Messages non lus" 
+                               FontSize="12" 
+                               TextColor="White" 
+                               HorizontalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <!-- Tâches en cours -->
+                <Frame Grid.Column="0" Grid.Row="1" 
+                       BackgroundColor="#4CAF50" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="15">
+                    <StackLayout>
+                        <Label Text="✅" FontSize="30" HorizontalOptions="Center" />
+                        <Label Text="23" 
+                               FontSize="28" 
+                               FontAttributes="Bold" 
+                               TextColor="White" 
+                               HorizontalOptions="Center" />
+                        <Label Text="Tâches en cours" 
+                               FontSize="12" 
+                               TextColor="White" 
+                               HorizontalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <!-- Équipe -->
+                <Frame Grid.Column="1" Grid.Row="1" 
+                       BackgroundColor="#9C27B0" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="15">
+                    <StackLayout>
+                        <Label Text="👥" FontSize="30" HorizontalOptions="Center" />
+                        <Label Text="18" 
+                               FontSize="28" 
+                               FontAttributes="Bold" 
+                               TextColor="White" 
+                               HorizontalOptions="Center" />
+                        <Label Text="Membres d'équipe" 
+                               FontSize="12" 
+                               TextColor="White" 
+                               HorizontalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+            <!-- Chantiers récents -->
+            <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20">
+                <StackLayout>
+                    <Label Text="🏗️ Chantiers récents" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource MessengerTextDark}" 
+                           Margin="0,0,0,15" />
+                    
+                    <!-- Chantier 1 -->
+                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15" Margin="0,0,0,10">
+                        <Border Grid.Column="0" 
+                                WidthRequest="40" 
+                                HeightRequest="40" 
+                                BackgroundColor="{StaticResource MessengerBlue}" 
+                                StrokeThickness="0">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20" />
+                            </Border.StrokeShape>
+                            <Label Text="🏢" 
+                                   FontSize="20" 
+                                   HorizontalOptions="Center" 
+                                   VerticalOptions="Center" />
+                        </Border>
+                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                            <Label Text="Résidence Les Jardins" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Text="En cours • 75% terminé" 
+                                   FontSize="12" 
+                                   TextColor="{StaticResource MessengerTextSecondary}" />
+                        </StackLayout>
+                        <Label Grid.Column="2" 
+                               Text=">" 
+                               FontSize="18" 
+                               TextColor="{StaticResource MessengerTextSecondary}" 
+                               VerticalOptions="Center" />
+                    </Grid>
+
+                    <!-- Chantier 2 -->
+                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15" Margin="0,0,0,10">
+                        <Border Grid.Column="0" 
+                                WidthRequest="40" 
+                                HeightRequest="40" 
+                                BackgroundColor="#FF6B35" 
+                                StrokeThickness="0">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20" />
+                            </Border.StrokeShape>
+                            <Label Text="🏠" 
+                                   FontSize="20" 
+                                   HorizontalOptions="Center" 
+                                   VerticalOptions="Center" />
+                        </Border>
+                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                            <Label Text="Villa Moderne" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Text="Planification • Début prévu" 
+                                   FontSize="12" 
+                                   TextColor="{StaticResource MessengerTextSecondary}" />
+                        </StackLayout>
+                        <Label Grid.Column="2" 
+                               Text=">" 
+                               FontSize="18" 
+                               TextColor="{StaticResource MessengerTextSecondary}" 
+                               VerticalOptions="Center" />
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <!-- Actions rapides -->
+            <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20">
+                <StackLayout>
+                    <Label Text="⚡ Actions rapides" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource MessengerTextDark}" 
+                           Margin="0,0,0,15" />
+                    
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10" RowSpacing="10">
+                        <Button Grid.Column="0" 
+                                Text="➕ Nouveau chantier" 
+                                BackgroundColor="{StaticResource MessengerBlue}" 
+                                TextColor="White" 
+                                CornerRadius="10" 
+                                FontSize="14" />
+                        <Button Grid.Column="1" 
+                                Text="📋 Nouvelle tâche" 
+                                BackgroundColor="#4CAF50" 
+                                TextColor="White" 
+                                CornerRadius="10" 
+                                FontSize="14" />
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <!-- Notifications importantes -->
+            <Frame BackgroundColor="#FFF3CD" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20" 
+                   BorderColor="#FFC107">
+                <StackLayout>
+                    <Label Text="⚠️ Notifications importantes" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="#856404" 
+                           Margin="0,0,0,10" />
+                    <Label Text="• Réunion chantier Villa Moderne demain 9h" 
+                           FontSize="14" 
+                           TextColor="#856404" />
+                    <Label Text="• Livraison matériaux Résidence Les Jardins vendredi" 
+                           FontSize="14" 
+                           TextColor="#856404" />
+                </StackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

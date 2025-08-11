@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Couleurs Messenger -->
+    <Color x:Key="MessengerBlue">#0084FF</Color>
+    <Color x:Key="MessengerBlueGradient">#00C6FF</Color>
+    <Color x:Key="MessengerGrayLight">#F0F0F0</Color>
+    <Color x:Key="MessengerGrayDark">#E4E6EA</Color>
+    <Color x:Key="MessengerTextDark">#1C1E21</Color>
+    <Color x:Key="MessengerTextSecondary">#65676B</Color>
+    <Color x:Key="MessengerWhite">#FFFFFF</Color>
+    <Color x:Key="MessengerBackground">#FAFAFA</Color>
+
+    <!-- Style pour le header du chat -->
+    <Style x:Key="ChatHeaderStyle" TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="{StaticResource MessengerWhite}" />
+        <Setter Property="Padding" Value="15,10" />
+        <Setter Property="HeightRequest" Value="70" />
+    </Style>
+
+    <!-- Style pour le nom du contact -->
+    <Style x:Key="ContactNameStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="{StaticResource MessengerTextDark}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <!-- Style pour le statut du contact -->
+    <Style x:Key="ContactStatusStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="TextColor" Value="{StaticResource MessengerTextSecondary}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <!-- Style pour la photo de profil -->
+    <Style x:Key="ProfileImageStyle" TargetType="Ellipse">
+        <Setter Property="WidthRequest" Value="40" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="Fill" Value="{StaticResource MessengerGrayLight}" />
+    </Style>
+
+    <!-- Style pour les messages envoyés -->
+    <Style x:Key="SentMessageBubbleStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="{StaticResource MessengerBlue}" />
+        <Setter Property="CornerRadius" Value="18" />
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="Margin" Value="50,2,10,2" />
+        <Setter Property="HorizontalOptions" Value="End" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="BorderColor" Value="Transparent" />
+    </Style>
+
+    <!-- Style pour les messages reçus -->
+    <Style x:Key="ReceivedMessageBubbleStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="{StaticResource MessengerGrayLight}" />
+        <Setter Property="CornerRadius" Value="18" />
+        <Setter Property="Padding" Value="12,8" />
+        <Setter Property="Margin" Value="10,2,50,2" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="HasShadow" Value="False" />
+        <Setter Property="BorderColor" Value="Transparent" />
+    </Style>
+
+    <!-- Style pour le texte des messages envoyés -->
+    <Style x:Key="SentMessageTextStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource MessengerWhite}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+    </Style>
+
+    <!-- Style pour le texte des messages reçus -->
+    <Style x:Key="ReceivedMessageTextStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{StaticResource MessengerTextDark}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+    </Style>
+
+    <!-- Style pour l'horodatage -->
+    <Style x:Key="MessageTimeStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="TextColor" Value="{StaticResource MessengerTextSecondary}" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="Margin" Value="0,2,0,5" />
+    </Style>
+
+    <!-- Style pour la zone de saisie -->
+    <Style x:Key="MessageInputFrameStyle" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="{StaticResource MessengerWhite}" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="Padding" Value="15,8" />
+        <Setter Property="Margin" Value="10,5" />
+        <Setter Property="HasShadow" Value="True" />
+        <Setter Property="BorderColor" Value="{StaticResource MessengerGrayDark}" />
+    </Style>
+
+    <!-- Style pour le champ de saisie -->
+    <Style x:Key="MessageEntryStyle" TargetType="Entry">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="TextColor" Value="{StaticResource MessengerTextDark}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Placeholder" Value="Tapez votre message..." />
+        <Setter Property="PlaceholderColor" Value="{StaticResource MessengerTextSecondary}" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <!-- Style pour le bouton d'envoi -->
+    <Style x:Key="SendButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource MessengerBlue}" />
+        <Setter Property="TextColor" Value="{StaticResource MessengerWhite}" />
+        <Setter Property="CornerRadius" Value="20" />
+        <Setter Property="WidthRequest" Value="40" />
+        <Setter Property="HeightRequest" Value="40" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Text" Value="➤" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <!-- Style pour la zone de messages -->
+    <Style x:Key="MessagesAreaStyle" TargetType="CollectionView">
+        <Setter Property="BackgroundColor" Value="{StaticResource MessengerBackground}" />
+        <Setter Property="SelectionMode" Value="None" />
+    </Style>
+
+    <!-- Style pour la page principale -->
+    <Style x:Key="ChatPageStyle" TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{StaticResource MessengerBackground}" />
+    </Style>
+
+</ResourceDictionary>

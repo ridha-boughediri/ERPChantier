@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ERPChantier.Views.ChatPage"
+             xmlns:viewmodels="clr-namespace:ERPChantier.ViewModels"
+             xmlns:models="clr-namespace:ERPChantier.Models"
+             Title="Chat"
+             Style="{StaticResource ChatPageStyle}">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        
+        <!-- Header du chat -->
+        <Grid Grid.Row="0" Style="{StaticResource ChatHeaderStyle}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+            <!-- Photo de profil -->
+            <Border Grid.Column="0" 
+                    WidthRequest="40" 
+                    HeightRequest="40"
+                    BackgroundColor="{StaticResource MessengerBlue}"
+                    StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+                </Border.StrokeShape>
+                <Label Text="{Binding CurrentContact.Name, StringFormat='{0:C1}'}"
+                       TextColor="White"
+                       FontSize="16"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+            </Border>
+            
+            <!-- Informations du contact -->
+            <StackLayout Grid.Column="1" 
+                         Orientation="Vertical" 
+                         VerticalOptions="Center"
+                         Margin="10,0,0,0">
+                <Label Text="{Binding CurrentContact.Name}" 
+                       Style="{StaticResource ContactNameStyle}" />
+                <Label Text="{Binding CurrentContact.StatusText}" 
+                       Style="{StaticResource ContactStatusStyle}" />
+            </StackLayout>
+            
+            <!-- Boutons d'action -->
+            <StackLayout Grid.Column="2" 
+                         Orientation="Horizontal" 
+                         VerticalOptions="Center">
+                <Button Text="📞" 
+                        BackgroundColor="Transparent"
+                        TextColor="{StaticResource MessengerBlue}"
+                        FontSize="20"
+                        WidthRequest="40"
+                        HeightRequest="40" />
+                <Button Text="📹" 
+                        BackgroundColor="Transparent"
+                        TextColor="{StaticResource MessengerBlue}"
+                        FontSize="20"
+                        WidthRequest="40"
+                        HeightRequest="40" />
+            </StackLayout>
+        </Grid>
+
+        <!-- Zone des messages -->
+        <CollectionView Grid.Row="1" 
+                        ItemsSource="{Binding Messages}"
+                        Style="{StaticResource MessagesAreaStyle}"
+                        x:Name="MessagesCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Message">
+                    <Grid Padding="5">
+                        <!-- Message envoyé -->
+                        <Frame IsVisible="{Binding IsFromCurrentUser}"
+                               Style="{StaticResource SentMessageBubbleStyle}">
+                            <StackLayout>
+                                <Label Text="{Binding Text}" 
+                                       Style="{StaticResource SentMessageTextStyle}" />
+                            </StackLayout>
+                        </Frame>
+                        
+                        <!-- Message reçu -->
+                        <Frame IsVisible="{Binding IsFromCurrentUser, Converter={StaticResource InvertedBoolConverter}}"
+                               Style="{StaticResource ReceivedMessageBubbleStyle}">
+                            <StackLayout>
+                                <Label Text="{Binding Text}" 
+                                       Style="{StaticResource ReceivedMessageTextStyle}" />
+                            </StackLayout>
+                        </Frame>
+                        
+                        <!-- Horodatage -->
+                        <Label Text="{Binding TimeString}" 
+                               Style="{StaticResource MessageTimeStyle}"
+                               HorizontalOptions="{Binding IsFromCurrentUser, Converter={StaticResource BoolToLayoutOptionsConverter}}" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Zone de saisie -->
+        <Frame Grid.Row="2" 
+               Style="{StaticResource MessageInputFrameStyle}">
+            <Grid ColumnDefinitions="*,Auto">
+                <Entry Grid.Column="0"
+                       Text="{Binding MessageText}"
+                       Style="{StaticResource MessageEntryStyle}"
+                       ReturnCommand="{Binding SendMessageCommand}" />
+                <Button Grid.Column="1"
+                        Command="{Binding SendMessageCommand}"
+                        Style="{StaticResource SendButtonStyle}" />
+            </Grid>
+        </Frame>
+    </Grid>
+</ContentPage>

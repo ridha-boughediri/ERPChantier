@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ERPChantier.Views.CalendarPage"
+             Title="Calendrier"
+             BackgroundColor="{StaticResource MessengerBackground}">
+
+    <Grid RowDefinitions="Auto,*">
+        
+        <!-- Header avec navigation mensuelle -->
+        <Frame Grid.Row="0" 
+               BackgroundColor="{StaticResource MessengerWhite}" 
+               CornerRadius="0" 
+               HasShadow="True" 
+               Padding="20,15">
+            <Grid ColumnDefinitions="Auto,*,Auto">
+                <Button Grid.Column="0" 
+                        Text="◀" 
+                        BackgroundColor="Transparent" 
+                        TextColor="{StaticResource MessengerBlue}" 
+                        FontSize="18" />
+                <Label Grid.Column="1" 
+                       Text="Novembre 2024" 
+                       FontSize="18" 
+                       FontAttributes="Bold" 
+                       TextColor="{StaticResource MessengerTextDark}" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" />
+                <Button Grid.Column="2" 
+                        Text="▶" 
+                        BackgroundColor="Transparent" 
+                        TextColor="{StaticResource MessengerBlue}" 
+                        FontSize="18" />
+            </Grid>
+        </Frame>
+
+        <!-- Contenu du calendrier -->
+        <ScrollView Grid.Row="1" Padding="15">
+            <StackLayout Spacing="20">
+                
+                <!-- Mini calendrier -->
+                <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="20">
+                    <StackLayout>
+                        <Label Text="📅 Calendrier du mois" 
+                               FontSize="16" 
+                               FontAttributes="Bold" 
+                               TextColor="{StaticResource MessengerTextDark}" 
+                               Margin="0,0,0,15" />
+                        
+                        <!-- Jours de la semaine -->
+                        <Grid ColumnDefinitions="*,*,*,*,*,*,*" ColumnSpacing="5">
+                            <Label Grid.Column="0" Text="L" FontSize="12" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextSecondary}" />
+                            <Label Grid.Column="1" Text="M" FontSize="12" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextSecondary}" />
+                            <Label Grid.Column="2" Text="M" FontSize="12" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextSecondary}" />
+                            <Label Grid.Column="3" Text="J" FontSize="12" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextSecondary}" />
+                            <Label Grid.Column="4" Text="V" FontSize="12" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextSecondary}" />
+                            <Label Grid.Column="5" Text="S" FontSize="12" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextSecondary}" />
+                            <Label Grid.Column="6" Text="D" FontSize="12" FontAttributes="Bold" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextSecondary}" />
+                        </Grid>
+                        
+                        <!-- Première semaine -->
+                        <Grid ColumnDefinitions="*,*,*,*,*,*,*" ColumnSpacing="5" Margin="0,10,0,0">
+                            <Label Grid.Column="0" Text="" />
+                            <Label Grid.Column="1" Text="" />
+                            <Label Grid.Column="2" Text="" />
+                            <Label Grid.Column="3" Text="" />
+                            <Label Grid.Column="4" Text="1" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Grid.Column="5" Text="2" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Grid.Column="6" Text="3" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextDark}" />
+                        </Grid>
+                        
+                        <!-- Deuxième semaine -->
+                        <Grid ColumnDefinitions="*,*,*,*,*,*,*" ColumnSpacing="5" Margin="0,5,0,0">
+                            <Label Grid.Column="0" Text="4" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Grid.Column="1" Text="5" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Grid.Column="2" Text="6" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Grid.Column="3" Text="7" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Grid.Column="4" Text="8" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Grid.Column="5" Text="9" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Grid.Column="6" Text="10" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextDark}" />
+                        </Grid>
+                        
+                        <!-- Troisième semaine avec jour actuel -->
+                        <Grid ColumnDefinitions="*,*,*,*,*,*,*" ColumnSpacing="5" Margin="0,5,0,0">
+                            <Label Grid.Column="0" Text="11" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextDark}" />
+                            <Border Grid.Column="1" 
+                                    BackgroundColor="{StaticResource MessengerBlue}" 
+                                    WidthRequest="30" 
+                                    HeightRequest="30" 
+                                    HorizontalOptions="Center">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="15" />
+                                </Border.StrokeShape>
+                                <Label Text="12" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold" 
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center" 
+                                       TextColor="White" />
+                            </Border>
+                            <Label Grid.Column="2" Text="13" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Grid.Column="3" Text="14" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Grid.Column="4" Text="15" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerBlue}" FontAttributes="Bold" />
+                            <Label Grid.Column="5" Text="16" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Grid.Column="6" Text="17" FontSize="14" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextDark}" />
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Tâches du jour -->
+                <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="20">
+                    <StackLayout>
+                        <Label Text="📋 Aujourd'hui - 12 Novembre" 
+                               FontSize="16" 
+                               FontAttributes="Bold" 
+                               TextColor="{StaticResource MessengerTextDark}" 
+                               Margin="0,0,0,15" />
+                        
+                        <!-- Tâche du jour 1 -->
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15" Margin="0,0,0,15">
+                            <Border Grid.Column="0" 
+                                    WidthRequest="4" 
+                                    HeightRequest="40" 
+                                    BackgroundColor="#FF4444" 
+                                    VerticalOptions="Center" />
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="09:00 - Réunion chantier" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" />
+                                <Label Text="Point sur l'avancement des fondations" 
+                                       FontSize="12" 
+                                       TextColor="{StaticResource MessengerTextSecondary}" />
+                            </StackLayout>
+                            <Label Grid.Column="2" 
+                                   Text="🔴" 
+                                   FontSize="16" 
+                                   VerticalOptions="Center" />
+                        </Grid>
+
+                        <!-- Tâche du jour 2 -->
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15" Margin="0,0,0,15">
+                            <Border Grid.Column="0" 
+                                    WidthRequest="4" 
+                                    HeightRequest="40" 
+                                    BackgroundColor="{StaticResource MessengerBlue}" 
+                                    VerticalOptions="Center" />
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="14:00 - Contrôle qualité" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" />
+                                <Label Text="Vérification béton avec l'architecte" 
+                                       FontSize="12" 
+                                       TextColor="{StaticResource MessengerTextSecondary}" />
+                            </StackLayout>
+                            <Label Grid.Column="2" 
+                                   Text="🔵" 
+                                   FontSize="16" 
+                                   VerticalOptions="Center" />
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Tâches à venir -->
+                <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="20">
+                    <StackLayout>
+                        <Label Text="📅 Prochaines échéances" 
+                               FontSize="16" 
+                               FontAttributes="Bold" 
+                               TextColor="{StaticResource MessengerTextDark}" 
+                               Margin="0,0,0,15" />
+                        
+                        <!-- Échéance 1 -->
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15" Margin="0,0,0,15">
+                            <Border Grid.Column="0" 
+                                    WidthRequest="50" 
+                                    HeightRequest="50" 
+                                    BackgroundColor="#FFF3CD" 
+                                    StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="25" />
+                                </Border.StrokeShape>
+                                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Label Text="15" 
+                                           FontSize="16" 
+                                           FontAttributes="Bold" 
+                                           TextColor="#856404" 
+                                           HorizontalOptions="Center" />
+                                    <Label Text="NOV" 
+                                           FontSize="10" 
+                                           TextColor="#856404" 
+                                           HorizontalOptions="Center" />
+                                </StackLayout>
+                            </Border>
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="Préparation du terrain" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" />
+                                <Label Text="Deadline dans 3 jours" 
+                                       FontSize="12" 
+                                       TextColor="#FFA500" />
+                            </StackLayout>
+                            <Label Grid.Column="2" 
+                                   Text="⚠️" 
+                                   FontSize="16" 
+                                   VerticalOptions="Center" />
+                        </Grid>
+
+                        <!-- Échéance 2 -->
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
+                            <Border Grid.Column="0" 
+                                    WidthRequest="50" 
+                                    HeightRequest="50" 
+                                    BackgroundColor="{StaticResource MessengerGrayLight}" 
+                                    StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="25" />
+                                </Border.StrokeShape>
+                                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Label Text="18" 
+                                           FontSize="16" 
+                                           FontAttributes="Bold" 
+                                           TextColor="{StaticResource MessengerTextDark}" 
+                                           HorizontalOptions="Center" />
+                                    <Label Text="NOV" 
+                                           FontSize="10" 
+                                           TextColor="{StaticResource MessengerTextSecondary}" 
+                                           HorizontalOptions="Center" />
+                                </StackLayout>
+                            </Border>
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="Livraison matériaux" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" />
+                                <Label Text="Dans 6 jours" 
+                                       FontSize="12" 
+                                       TextColor="{StaticResource MessengerTextSecondary}" />
+                            </StackLayout>
+                            <Label Grid.Column="2" 
+                                   Text="📦" 
+                                   FontSize="16" 
+                                   VerticalOptions="Center" />
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ERPChantier.Views.DocumentsPage"
+             Title="Documents"
+             BackgroundColor="{StaticResource MessengerBackground}">
+
+    <Grid RowDefinitions="Auto,*">
+        
+        <!-- Header avec actions -->
+        <Frame Grid.Row="0" 
+               BackgroundColor="{StaticResource MessengerWhite}" 
+               CornerRadius="0" 
+               HasShadow="True" 
+               Padding="20,15">
+            <Grid ColumnDefinitions="*,Auto,Auto">
+                <SearchBar Grid.Column="0" 
+                           Placeholder="Rechercher un document..." 
+                           BackgroundColor="{StaticResource MessengerGrayLight}" 
+                           TextColor="{StaticResource MessengerTextDark}" />
+                <Button Grid.Column="1" 
+                        Text="📷" 
+                        BackgroundColor="#4CAF50" 
+                        TextColor="White" 
+                        CornerRadius="20" 
+                        WidthRequest="40" 
+                        HeightRequest="40" 
+                        FontSize="18" 
+                        Margin="10,0,5,0" />
+                <Button Grid.Column="2" 
+                        Text="➕" 
+                        BackgroundColor="{StaticResource MessengerBlue}" 
+                        TextColor="White" 
+                        CornerRadius="20" 
+                        WidthRequest="40" 
+                        HeightRequest="40" 
+                        FontSize="18" />
+            </Grid>
+        </Frame>
+
+        <!-- Liste des documents -->
+        <ScrollView Grid.Row="1" Padding="15">
+            <StackLayout Spacing="15">
+                
+                <!-- Section Plans -->
+                <Label Text="📐 Plans et dessins" 
+                       FontSize="16" 
+                       FontAttributes="Bold" 
+                       TextColor="{StaticResource MessengerTextDark}" />
+
+                <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="20">
+                    <StackLayout Spacing="15">
+                        
+                        <!-- Document 1 -->
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
+                            <Border Grid.Column="0" 
+                                    WidthRequest="50" 
+                                    HeightRequest="50" 
+                                    BackgroundColor="#2196F3" 
+                                    StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Label Text="📄" 
+                                       FontSize="20" 
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center" />
+                            </Border>
+                            
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="Plan_Fondations_v2.pdf" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" />
+                                <Label Text="2.4 MB • Modifié il y a 2 jours" 
+                                       FontSize="12" 
+                                       TextColor="{StaticResource MessengerTextSecondary}" />
+                            </StackLayout>
+                            
+                            <Button Grid.Column="2" 
+                                    Text="⋮" 
+                                    BackgroundColor="Transparent" 
+                                    TextColor="{StaticResource MessengerTextSecondary}" 
+                                    FontSize="18" />
+                        </Grid>
+
+                        <Border HeightRequest="1" BackgroundColor="{StaticResource MessengerGrayLight}" />
+
+                        <!-- Document 2 -->
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
+                            <Border Grid.Column="0" 
+                                    WidthRequest="50" 
+                                    HeightRequest="50" 
+                                    BackgroundColor="#FF9800" 
+                                    StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Label Text="🖼️" 
+                                       FontSize="20" 
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center" />
+                            </Border>
+                            
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="Elevation_Sud.dwg" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" />
+                                <Label Text="1.8 MB • Modifié il y a 5 jours" 
+                                       FontSize="12" 
+                                       TextColor="{StaticResource MessengerTextSecondary}" />
+                            </StackLayout>
+                            
+                            <Button Grid.Column="2" 
+                                    Text="⋮" 
+                                    BackgroundColor="Transparent" 
+                                    TextColor="{StaticResource MessengerTextSecondary}" 
+                                    FontSize="18" />
+                        </Grid>
+
+                    </StackLayout>
+                </Frame>
+
+                <!-- Section Photos -->
+                <Label Text="📸 Photos de chantier" 
+                       FontSize="16" 
+                       FontAttributes="Bold" 
+                       TextColor="{StaticResource MessengerTextDark}" 
+                       Margin="0,20,0,0" />
+
+                <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="20">
+                    <StackLayout>
+                        
+                        <!-- Galerie de photos -->
+                        <Grid ColumnDefinitions="*,*,*" ColumnSpacing="10" RowSpacing="10">
+                            
+                            <!-- Photo 1 -->
+                            <Frame Grid.Column="0" 
+                                   BackgroundColor="{StaticResource MessengerGrayLight}" 
+                                   CornerRadius="10" 
+                                   HasShadow="False" 
+                                   Padding="0" 
+                                   HeightRequest="80">
+                                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Label Text="🏗️" FontSize="30" HorizontalOptions="Center" />
+                                    <Label Text="Fondations" FontSize="10" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextSecondary}" />
+                                </StackLayout>
+                            </Frame>
+
+                            <!-- Photo 2 -->
+                            <Frame Grid.Column="1" 
+                                   BackgroundColor="{StaticResource MessengerGrayLight}" 
+                                   CornerRadius="10" 
+                                   HasShadow="False" 
+                                   Padding="0" 
+                                   HeightRequest="80">
+                                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Label Text="🧱" FontSize="30" HorizontalOptions="Center" />
+                                    <Label Text="Murs" FontSize="10" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextSecondary}" />
+                                </StackLayout>
+                            </Frame>
+
+                            <!-- Photo 3 -->
+                            <Frame Grid.Column="2" 
+                                   BackgroundColor="{StaticResource MessengerGrayLight}" 
+                                   CornerRadius="10" 
+                                   HasShadow="False" 
+                                   Padding="0" 
+                                   HeightRequest="80">
+                                <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Label Text="⚡" FontSize="30" HorizontalOptions="Center" />
+                                    <Label Text="Électricité" FontSize="10" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextSecondary}" />
+                                </StackLayout>
+                            </Frame>
+
+                        </Grid>
+
+                        <Label Text="12 photos • Dernière ajoutée aujourd'hui" 
+                               FontSize="12" 
+                               TextColor="{StaticResource MessengerTextSecondary}" 
+                               HorizontalOptions="Center" 
+                               Margin="0,15,0,0" />
+
+                    </StackLayout>
+                </Frame>
+
+                <!-- Section Rapports -->
+                <Label Text="📊 Rapports et certificats" 
+                       FontSize="16" 
+                       FontAttributes="Bold" 
+                       TextColor="{StaticResource MessengerTextDark}" 
+                       Margin="0,20,0,0" />
+
+                <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="20">
+                    <StackLayout Spacing="15">
+                        
+                        <!-- Rapport 1 -->
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
+                            <Border Grid.Column="0" 
+                                    WidthRequest="50" 
+                                    HeightRequest="50" 
+                                    BackgroundColor="#4CAF50" 
+                                    StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Label Text="✅" 
+                                       FontSize="20" 
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center" />
+                            </Border>
+                            
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="Rapport_Controle_Beton.pdf" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" />
+                                <Label Text="856 KB • Validé • Il y a 1 jour" 
+                                       FontSize="12" 
+                                       TextColor="#4CAF50" />
+                            </StackLayout>
+                            
+                            <Button Grid.Column="2" 
+                                    Text="⋮" 
+                                    BackgroundColor="Transparent" 
+                                    TextColor="{StaticResource MessengerTextSecondary}" 
+                                    FontSize="18" />
+                        </Grid>
+
+                        <Border HeightRequest="1" BackgroundColor="{StaticResource MessengerGrayLight}" />
+
+                        <!-- Rapport 2 -->
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
+                            <Border Grid.Column="0" 
+                                    WidthRequest="50" 
+                                    HeightRequest="50" 
+                                    BackgroundColor="#FFA500" 
+                                    StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10" />
+                                </Border.StrokeShape>
+                                <Label Text="⏳" 
+                                       FontSize="20" 
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center" />
+                            </Border>
+                            
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="Certificat_Conformite.pdf" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" />
+                                <Label Text="1.2 MB • En attente de validation" 
+                                       FontSize="12" 
+                                       TextColor="#FFA500" />
+                            </StackLayout>
+                            
+                            <Button Grid.Column="2" 
+                                    Text="⋮" 
+                                    BackgroundColor="Transparent" 
+                                    TextColor="{StaticResource MessengerTextSecondary}" 
+                                    FontSize="18" />
+                        </Grid>
+
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ERPChantier.Views.ChantiersPage"
+             Title="Chantiers"
+             BackgroundColor="{StaticResource MessengerBackground}">
+
+    <ScrollView Padding="20">
+        <StackLayout Spacing="20">
+            
+            <!-- Header -->
+            <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20">
+                <StackLayout>
+                    <Label Text="🏗️ Gestion des Chantiers" 
+                           FontSize="24" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource MessengerTextDark}" />
+                    <Label Text="Gérez vos chantiers et suivez leur progression" 
+                           FontSize="16" 
+                           TextColor="{StaticResource MessengerTextSecondary}" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Actions rapides -->
+            <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20">
+                <StackLayout>
+                    <Label Text="⚡ Actions rapides" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource MessengerTextDark}" 
+                           Margin="0,0,0,15" />
+                    
+                    <Button x:Name="CreateChantierBtn"
+                            Text="➕ Créer un nouveau chantier" 
+                            BackgroundColor="{StaticResource MessengerBlue}" 
+                            TextColor="White" 
+                            CornerRadius="10" 
+                            FontSize="16" 
+                            Margin="0,0,0,10" />
+                    
+                    <Button x:Name="OpenKanbanBtn"
+                            Text="📋 Ouvrir le suivi Kanban" 
+                            BackgroundColor="#4CAF50" 
+                            TextColor="White" 
+                            CornerRadius="10" 
+                            FontSize="16" 
+                            Clicked="OnOpenKanbanClicked" />
+                </StackLayout>
+            </Frame>
+
+            <!-- Liste des chantiers -->
+            <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20">
+                <StackLayout>
+                    <Label Text="🏗️ Chantiers actifs" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource MessengerTextDark}" 
+                           Margin="0,0,0,15" />
+                    
+                    <!-- Chantier 1 -->
+                    <Frame BackgroundColor="{StaticResource MessengerBackground}" 
+                           CornerRadius="10" 
+                           HasShadow="False" 
+                           Padding="15" 
+                           Margin="0,0,0,10">
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
+                            <Border Grid.Column="0" 
+                                    WidthRequest="50" 
+                                    HeightRequest="50" 
+                                    BackgroundColor="{StaticResource MessengerBlue}" 
+                                    StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="25" />
+                                </Border.StrokeShape>
+                                <Label Text="🏢" 
+                                       FontSize="20" 
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center" />
+                            </Border>
+                            
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="Résidence Les Jardins" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" />
+                                <Label Text="En cours • 75% terminé • 23 tâches" 
+                                       FontSize="12" 
+                                       TextColor="{StaticResource MessengerTextSecondary}" />
+                                <ProgressBar Progress="0.75" 
+                                             ProgressColor="{StaticResource MessengerBlue}" 
+                                             Margin="0,5,0,0" />
+                            </StackLayout>
+                            
+                            <Button Grid.Column="2" 
+                                    Text="📋" 
+                                    BackgroundColor="{StaticResource MessengerBlue}" 
+                                    TextColor="White" 
+                                    CornerRadius="15" 
+                                    WidthRequest="30" 
+                                    HeightRequest="30" 
+                                    FontSize="14" 
+                                    Clicked="OnOpenKanbanClicked" />
+                        </Grid>
+                    </Frame>
+
+                    <!-- Chantier 2 -->
+                    <Frame BackgroundColor="{StaticResource MessengerBackground}" 
+                           CornerRadius="10" 
+                           HasShadow="False" 
+                           Padding="15" 
+                           Margin="0,0,0,10">
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
+                            <Border Grid.Column="0" 
+                                    WidthRequest="50" 
+                                    HeightRequest="50" 
+                                    BackgroundColor="#FF6B35" 
+                                    StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="25" />
+                                </Border.StrokeShape>
+                                <Label Text="🏠" 
+                                       FontSize="20" 
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center" />
+                            </Border>
+                            
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="Villa Moderne" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" />
+                                <Label Text="Planification • Début prévu • 15 tâches" 
+                                       FontSize="12" 
+                                       TextColor="{StaticResource MessengerTextSecondary}" />
+                                <ProgressBar Progress="0.15" 
+                                             ProgressColor="#FF6B35" 
+                                             Margin="0,5,0,0" />
+                            </StackLayout>
+                            
+                            <Button Grid.Column="2" 
+                                    Text="📋" 
+                                    BackgroundColor="#FF6B35" 
+                                    TextColor="White" 
+                                    CornerRadius="15" 
+                                    WidthRequest="30" 
+                                    HeightRequest="30" 
+                                    FontSize="14" 
+                                    Clicked="OnOpenKanbanClicked" />
+                        </Grid>
+                    </Frame>
+
+                    <!-- Chantier 3 -->
+                    <Frame BackgroundColor="{StaticResource MessengerBackground}" 
+                           CornerRadius="10" 
+                           HasShadow="False" 
+                           Padding="15" 
+                           Opacity="0.7">
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
+                            <Border Grid.Column="0" 
+                                    WidthRequest="50" 
+                                    HeightRequest="50" 
+                                    BackgroundColor="#4CAF50" 
+                                    StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="25" />
+                                </Border.StrokeShape>
+                                <Label Text="🏪" 
+                                       FontSize="20" 
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center" />
+                            </Border>
+                            
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="Centre Commercial" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" />
+                                <Label Text="Terminé • 100% • 45 tâches" 
+                                       FontSize="12" 
+                                       TextColor="#4CAF50" />
+                                <ProgressBar Progress="1.0" 
+                                             ProgressColor="#4CAF50" 
+                                             Margin="0,5,0,0" />
+                            </StackLayout>
+                            
+                            <Label Grid.Column="2" 
+                                   Text="✅" 
+                                   FontSize="20" 
+                                   TextColor="#4CAF50" 
+                                   VerticalOptions="Center" />
+                        </Grid>
+                    </Frame>
+
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

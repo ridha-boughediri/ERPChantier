@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ERPChantier.Views.ReportsPage"
+             Title="Rapports"
+             BackgroundColor="{StaticResource MessengerBackground}">
+
+    <ScrollView Padding="15">
+        <StackLayout Spacing="20">
+            
+            <!-- Résumé du chantier -->
+            <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20">
+                <StackLayout>
+                    <Label Text="📊 Résumé du chantier" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource MessengerTextDark}" 
+                           Margin="0,0,0,15" />
+                    
+                    <!-- Progression générale -->
+                    <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,10">
+                        <Label Grid.Column="0" 
+                               Text="Progression générale" 
+                               FontSize="14" 
+                               TextColor="{StaticResource MessengerTextDark}" 
+                               VerticalOptions="Center" />
+                        <Label Grid.Column="1" 
+                               Text="75%" 
+                               FontSize="16" 
+                               FontAttributes="Bold" 
+                               TextColor="{StaticResource MessengerBlue}" 
+                               VerticalOptions="Center" />
+                    </Grid>
+                    <ProgressBar Progress="0.75" 
+                                 ProgressColor="{StaticResource MessengerBlue}" 
+                                 Margin="0,0,0,15" />
+                    
+                    <!-- Statistiques -->
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="20">
+                        <StackLayout Grid.Column="0">
+                            <Label Text="Tâches terminées" 
+                                   FontSize="12" 
+                                   TextColor="{StaticResource MessengerTextSecondary}" />
+                            <Label Text="13/23" 
+                                   FontSize="20" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#4CAF50" />
+                        </StackLayout>
+                        <StackLayout Grid.Column="1">
+                            <Label Text="Jours restants" 
+                                   FontSize="12" 
+                                   TextColor="{StaticResource MessengerTextSecondary}" />
+                            <Label Text="45" 
+                                   FontSize="20" 
+                                   FontAttributes="Bold" 
+                                   TextColor="#FF6B35" />
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <!-- Graphiques de performance -->
+            <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20">
+                <StackLayout>
+                    <Label Text="📈 Performance de l'équipe" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource MessengerTextDark}" 
+                           Margin="0,0,0,15" />
+                    
+                    <!-- Graphique simulé -->
+                    <Grid RowDefinitions="Auto,100,Auto" RowSpacing="10">
+                        
+                        <!-- Légende -->
+                        <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="Center" Spacing="20">
+                            <StackLayout Orientation="Horizontal" Spacing="5">
+                                <Border WidthRequest="15" HeightRequest="15" BackgroundColor="#4CAF50" VerticalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="2" />
+                                    </Border.StrokeShape>
+                                </Border>
+                                <Label Text="Terminé" FontSize="12" TextColor="{StaticResource MessengerTextSecondary}" VerticalOptions="Center" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Spacing="5">
+                                <Border WidthRequest="15" HeightRequest="15" BackgroundColor="{StaticResource MessengerBlue}" VerticalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="2" />
+                                    </Border.StrokeShape>
+                                </Border>
+                                <Label Text="En cours" FontSize="12" TextColor="{StaticResource MessengerTextSecondary}" VerticalOptions="Center" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" Spacing="5">
+                                <Border WidthRequest="15" HeightRequest="15" BackgroundColor="#FF6B35" VerticalOptions="Center">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="2" />
+                                    </Border.StrokeShape>
+                                </Border>
+                                <Label Text="À faire" FontSize="12" TextColor="{StaticResource MessengerTextSecondary}" VerticalOptions="Center" />
+                            </StackLayout>
+                        </StackLayout>
+                        
+                        <!-- Graphique en barres simulé -->
+                        <Grid Grid.Row="1" ColumnDefinitions="*,*,*,*,*" ColumnSpacing="10">
+                            
+                            <!-- Semaine 1 -->
+                            <StackLayout Grid.Column="0" VerticalOptions="End">
+                                <Border HeightRequest="60" BackgroundColor="#4CAF50" VerticalOptions="End">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="3" />
+                                    </Border.StrokeShape>
+                                </Border>
+                                <Border HeightRequest="20" BackgroundColor="{StaticResource MessengerBlue}" VerticalOptions="End">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="3" />
+                                    </Border.StrokeShape>
+                                </Border>
+                            </StackLayout>
+                            
+                            <!-- Semaine 2 -->
+                            <StackLayout Grid.Column="1" VerticalOptions="End">
+                                <Border HeightRequest="45" BackgroundColor="#4CAF50" VerticalOptions="End">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="3" />
+                                    </Border.StrokeShape>
+                                </Border>
+                                <Border HeightRequest="35" BackgroundColor="{StaticResource MessengerBlue}" VerticalOptions="End">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="3" />
+                                    </Border.StrokeShape>
+                                </Border>
+                            </StackLayout>
+                            
+                            <!-- Semaine 3 -->
+                            <StackLayout Grid.Column="2" VerticalOptions="End">
+                                <Border HeightRequest="30" BackgroundColor="#4CAF50" VerticalOptions="End">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="3" />
+                                    </Border.StrokeShape>
+                                </Border>
+                                <Border HeightRequest="40" BackgroundColor="{StaticResource MessengerBlue}" VerticalOptions="End">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="3" />
+                                    </Border.StrokeShape>
+                                </Border>
+                                <Border HeightRequest="15" BackgroundColor="#FF6B35" VerticalOptions="End">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="3" />
+                                    </Border.StrokeShape>
+                                </Border>
+                            </StackLayout>
+                            
+                            <!-- Semaine 4 -->
+                            <StackLayout Grid.Column="3" VerticalOptions="End">
+                                <Border HeightRequest="25" BackgroundColor="#4CAF50" VerticalOptions="End">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="3" />
+                                    </Border.StrokeShape>
+                                </Border>
+                                <Border HeightRequest="50" BackgroundColor="{StaticResource MessengerBlue}" VerticalOptions="End">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="3" />
+                                    </Border.StrokeShape>
+                                </Border>
+                            </StackLayout>
+                            
+                            <!-- Semaine 5 -->
+                            <StackLayout Grid.Column="4" VerticalOptions="End">
+                                <Border HeightRequest="35" BackgroundColor="#FF6B35" VerticalOptions="End">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="3" />
+                                    </Border.StrokeShape>
+                                </Border>
+                            </StackLayout>
+                            
+                        </Grid>
+                        
+                        <!-- Labels des semaines -->
+                        <Grid Grid.Row="2" ColumnDefinitions="*,*,*,*,*" ColumnSpacing="10">
+                            <Label Grid.Column="0" Text="S1" FontSize="12" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextSecondary}" />
+                            <Label Grid.Column="1" Text="S2" FontSize="12" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextSecondary}" />
+                            <Label Grid.Column="2" Text="S3" FontSize="12" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextSecondary}" />
+                            <Label Grid.Column="3" Text="S4" FontSize="12" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextSecondary}" />
+                            <Label Grid.Column="4" Text="S5" FontSize="12" HorizontalOptions="Center" TextColor="{StaticResource MessengerTextSecondary}" />
+                        </Grid>
+                        
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <!-- Indicateurs clés -->
+            <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20">
+                <StackLayout>
+                    <Label Text="🎯 Indicateurs clés" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource MessengerTextDark}" 
+                           Margin="0,0,0,15" />
+                    
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" ColumnSpacing="15" RowSpacing="15">
+                        
+                        <!-- Respect des délais -->
+                        <Frame Grid.Column="0" Grid.Row="0" 
+                               BackgroundColor="#E8F5E8" 
+                               CornerRadius="10" 
+                               HasShadow="False" 
+                               Padding="15">
+                            <StackLayout>
+                                <Label Text="⏰" FontSize="24" HorizontalOptions="Center" />
+                                <Label Text="92%" 
+                                       FontSize="20" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#4CAF50" 
+                                       HorizontalOptions="Center" />
+                                <Label Text="Respect délais" 
+                                       FontSize="12" 
+                                       TextColor="{StaticResource MessengerTextSecondary}" 
+                                       HorizontalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                        
+                        <!-- Qualité -->
+                        <Frame Grid.Column="1" Grid.Row="0" 
+                               BackgroundColor="#E3F2FD" 
+                               CornerRadius="10" 
+                               HasShadow="False" 
+                               Padding="15">
+                            <StackLayout>
+                                <Label Text="⭐" FontSize="24" HorizontalOptions="Center" />
+                                <Label Text="4.8/5" 
+                                       FontSize="20" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerBlue}" 
+                                       HorizontalOptions="Center" />
+                                <Label Text="Note qualité" 
+                                       FontSize="12" 
+                                       TextColor="{StaticResource MessengerTextSecondary}" 
+                                       HorizontalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                        
+                        <!-- Budget -->
+                        <Frame Grid.Column="0" Grid.Row="1" 
+                               BackgroundColor="#FFF3E0" 
+                               CornerRadius="10" 
+                               HasShadow="False" 
+                               Padding="15">
+                            <StackLayout>
+                                <Label Text="💰" FontSize="24" HorizontalOptions="Center" />
+                                <Label Text="85%" 
+                                       FontSize="20" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#FF9800" 
+                                       HorizontalOptions="Center" />
+                                <Label Text="Budget utilisé" 
+                                       FontSize="12" 
+                                       TextColor="{StaticResource MessengerTextSecondary}" 
+                                       HorizontalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                        
+                        <!-- Sécurité -->
+                        <Frame Grid.Column="1" Grid.Row="1" 
+                               BackgroundColor="#FFEBEE" 
+                               CornerRadius="10" 
+                               HasShadow="False" 
+                               Padding="15">
+                            <StackLayout>
+                                <Label Text="🛡️" FontSize="24" HorizontalOptions="Center" />
+                                <Label Text="0" 
+                                       FontSize="20" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#4CAF50" 
+                                       HorizontalOptions="Center" />
+                                <Label Text="Incidents" 
+                                       FontSize="12" 
+                                       TextColor="{StaticResource MessengerTextSecondary}" 
+                                       HorizontalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                        
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <!-- Actions rapides -->
+            <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                   CornerRadius="15" 
+                   HasShadow="True" 
+                   Padding="20">
+                <StackLayout>
+                    <Label Text="⚡ Actions rapides" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource MessengerTextDark}" 
+                           Margin="0,0,0,15" />
+                    
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10" RowSpacing="10">
+                        <Button Grid.Column="0" 
+                                Text="📄 Exporter PDF" 
+                                BackgroundColor="{StaticResource MessengerBlue}" 
+                                TextColor="White" 
+                                CornerRadius="10" 
+                                FontSize="14" />
+                        <Button Grid.Column="1" 
+                                Text="📧 Envoyer rapport" 
+                                BackgroundColor="#4CAF50" 
+                                TextColor="White" 
+                                CornerRadius="10" 
+                                FontSize="14" />
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

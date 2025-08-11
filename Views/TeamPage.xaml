@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ERPChantier.Views.TeamPage"
+             Title="Équipe"
+             BackgroundColor="{StaticResource MessengerBackground}">
+
+    <Grid RowDefinitions="Auto,*">
+        
+        <!-- Header avec recherche -->
+        <Frame Grid.Row="0" 
+               BackgroundColor="{StaticResource MessengerWhite}" 
+               CornerRadius="0" 
+               HasShadow="True" 
+               Padding="20,15">
+            <Grid ColumnDefinitions="*,Auto">
+                <SearchBar Grid.Column="0" 
+                           Placeholder="Rechercher un membre..." 
+                           BackgroundColor="{StaticResource MessengerGrayLight}" 
+                           TextColor="{StaticResource MessengerTextDark}" />
+                <Button Grid.Column="1" 
+                        Text="➕" 
+                        BackgroundColor="{StaticResource MessengerBlue}" 
+                        TextColor="White" 
+                        CornerRadius="20" 
+                        WidthRequest="40" 
+                        HeightRequest="40" 
+                        FontSize="18" 
+                        Margin="10,0,0,0" />
+            </Grid>
+        </Frame>
+
+        <!-- Liste de l'équipe -->
+        <ScrollView Grid.Row="1" Padding="15">
+            <StackLayout Spacing="15">
+                
+                <!-- Chef de chantier -->
+                <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="20">
+                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
+                        <Border Grid.Column="0" 
+                                WidthRequest="60" 
+                                HeightRequest="60" 
+                                BackgroundColor="#FF6B35" 
+                                StrokeThickness="0">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="30" />
+                            </Border.StrokeShape>
+                            <Label Text="JD" 
+                                   FontSize="20" 
+                                   FontAttributes="Bold" 
+                                   TextColor="White" 
+                                   HorizontalOptions="Center" 
+                                   VerticalOptions="Center" />
+                        </Border>
+                        
+                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                            <Label Text="Jean Dupont" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Text="Chef de chantier" 
+                                   FontSize="12" 
+                                   TextColor="White" 
+                                   BackgroundColor="#FF6B35" 
+                                   Padding="8,4" 
+                                   HorizontalOptions="Start">
+                                <Label.Clip>
+                                    <RoundRectangleGeometry CornerRadius="10" Rect="0,0,100,20" />
+                                </Label.Clip>
+                            </Label>
+                            <Label Text="📞 06 12 34 56 78" 
+                                   FontSize="12" 
+                                   TextColor="{StaticResource MessengerTextSecondary}" 
+                                   Margin="0,5,0,0" />
+                            <Label Text="✅ En ligne" 
+                                   FontSize="12" 
+                                   TextColor="#4CAF50" 
+                                   FontAttributes="Bold" />
+                        </StackLayout>
+                        
+                        <StackLayout Grid.Column="2" VerticalOptions="Center">
+                            <Button Text="💬" 
+                                    BackgroundColor="Transparent" 
+                                    TextColor="{StaticResource MessengerBlue}" 
+                                    FontSize="20" 
+                                    WidthRequest="40" 
+                                    HeightRequest="40" />
+                            <Button Text="📞" 
+                                    BackgroundColor="Transparent" 
+                                    TextColor="#4CAF50" 
+                                    FontSize="20" 
+                                    WidthRequest="40" 
+                                    HeightRequest="40" />
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Architecte -->
+                <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="20">
+                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
+                        <Border Grid.Column="0" 
+                                WidthRequest="60" 
+                                HeightRequest="60" 
+                                BackgroundColor="#004E89" 
+                                StrokeThickness="0">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="30" />
+                            </Border.StrokeShape>
+                            <Label Text="AR" 
+                                   FontSize="20" 
+                                   FontAttributes="Bold" 
+                                   TextColor="White" 
+                                   HorizontalOptions="Center" 
+                                   VerticalOptions="Center" />
+                        </Border>
+                        
+                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                            <Label Text="Anne Robert" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Text="Architecte" 
+                                   FontSize="12" 
+                                   TextColor="White" 
+                                   BackgroundColor="#004E89" 
+                                   Padding="8,4" 
+                                   HorizontalOptions="Start">
+                                <Label.Clip>
+                                    <RoundRectangleGeometry CornerRadius="10" Rect="0,0,80,20" />
+                                </Label.Clip>
+                            </Label>
+                            <Label Text="📞 06 98 76 54 32" 
+                                   FontSize="12" 
+                                   TextColor="{StaticResource MessengerTextSecondary}" 
+                                   Margin="0,5,0,0" />
+                            <Label Text="🟡 Absent(e) - Retour 14h" 
+                                   FontSize="12" 
+                                   TextColor="#FFA500" />
+                        </StackLayout>
+                        
+                        <StackLayout Grid.Column="2" VerticalOptions="Center">
+                            <Button Text="💬" 
+                                    BackgroundColor="Transparent" 
+                                    TextColor="{StaticResource MessengerBlue}" 
+                                    FontSize="20" 
+                                    WidthRequest="40" 
+                                    HeightRequest="40" />
+                            <Button Text="📞" 
+                                    BackgroundColor="Transparent" 
+                                    TextColor="#4CAF50" 
+                                    FontSize="20" 
+                                    WidthRequest="40" 
+                                    HeightRequest="40" />
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Ingénieur -->
+                <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="20">
+                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
+                        <Border Grid.Column="0" 
+                                WidthRequest="60" 
+                                HeightRequest="60" 
+                                BackgroundColor="#1A659E" 
+                                StrokeThickness="0">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="30" />
+                            </Border.StrokeShape>
+                            <Label Text="PD" 
+                                   FontSize="20" 
+                                   FontAttributes="Bold" 
+                                   TextColor="White" 
+                                   HorizontalOptions="Center" 
+                                   VerticalOptions="Center" />
+                        </Border>
+                        
+                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                            <Label Text="Pierre Durand" 
+                                   FontSize="16" 
+                                   FontAttributes="Bold" 
+                                   TextColor="{StaticResource MessengerTextDark}" />
+                            <Label Text="Ingénieur" 
+                                   FontSize="12" 
+                                   TextColor="White" 
+                                   BackgroundColor="#1A659E" 
+                                   Padding="8,4" 
+                                   HorizontalOptions="Start">
+                                <Label.Clip>
+                                    <RoundRectangleGeometry CornerRadius="10" Rect="0,0,80,20" />
+                                </Label.Clip>
+                            </Label>
+                            <Label Text="📞 06 11 22 33 44" 
+                                   FontSize="12" 
+                                   TextColor="{StaticResource MessengerTextSecondary}" 
+                                   Margin="0,5,0,0" />
+                            <Label Text="✅ En ligne" 
+                                   FontSize="12" 
+                                   TextColor="#4CAF50" 
+                                   FontAttributes="Bold" />
+                        </StackLayout>
+                        
+                        <StackLayout Grid.Column="2" VerticalOptions="Center">
+                            <Button Text="💬" 
+                                    BackgroundColor="Transparent" 
+                                    TextColor="{StaticResource MessengerBlue}" 
+                                    FontSize="20" 
+                                    WidthRequest="40" 
+                                    HeightRequest="40" />
+                            <Button Text="📞" 
+                                    BackgroundColor="Transparent" 
+                                    TextColor="#4CAF50" 
+                                    FontSize="20" 
+                                    WidthRequest="40" 
+                                    HeightRequest="40" />
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+
+                <!-- Ouvriers -->
+                <Label Text="👷 Ouvriers" 
+                       FontSize="16" 
+                       FontAttributes="Bold" 
+                       TextColor="{StaticResource MessengerTextDark}" 
+                       Margin="0,10,0,0" />
+
+                <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="20">
+                    <StackLayout Spacing="15">
+                        
+                        <!-- Ouvrier 1 -->
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
+                            <Border Grid.Column="0" 
+                                    WidthRequest="50" 
+                                    HeightRequest="50" 
+                                    BackgroundColor="#F77F00" 
+                                    StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="25" />
+                                </Border.StrokeShape>
+                                <Label Text="ML" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold" 
+                                       TextColor="White" 
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center" />
+                            </Border>
+                            
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="Marc Leblanc" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" />
+                                <Label Text="Maçon • ✅ En ligne" 
+                                       FontSize="12" 
+                                       TextColor="{StaticResource MessengerTextSecondary}" />
+                            </StackLayout>
+                            
+                            <Button Grid.Column="2" 
+                                    Text="💬" 
+                                    BackgroundColor="Transparent" 
+                                    TextColor="{StaticResource MessengerBlue}" 
+                                    FontSize="16" 
+                                    WidthRequest="35" 
+                                    HeightRequest="35" />
+                        </Grid>
+
+                        <Border HeightRequest="1" BackgroundColor="{StaticResource MessengerGrayLight}" />
+
+                        <!-- Ouvrier 2 -->
+                        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="15">
+                            <Border Grid.Column="0" 
+                                    WidthRequest="50" 
+                                    HeightRequest="50" 
+                                    BackgroundColor="#FCBF49" 
+                                    StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="25" />
+                                </Border.StrokeShape>
+                                <Label Text="EM" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold" 
+                                       TextColor="White" 
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center" />
+                            </Border>
+                            
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="Éric Martin" 
+                                       FontSize="14" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" />
+                                <Label Text="Électricien • 🔴 Hors ligne" 
+                                       FontSize="12" 
+                                       TextColor="{StaticResource MessengerTextSecondary}" />
+                            </StackLayout>
+                            
+                            <Button Grid.Column="2" 
+                                    Text="💬" 
+                                    BackgroundColor="Transparent" 
+                                    TextColor="{StaticResource MessengerTextSecondary}" 
+                                    FontSize="16" 
+                                    WidthRequest="35" 
+                                    HeightRequest="35" />
+                        </Grid>
+
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

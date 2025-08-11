@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:ERPChantier.ViewModels"
+             xmlns:models="clr-namespace:ERPChantier.Models"
+             x:Class="ERPChantier.Views.KanbanPage"
+             Title="Kanban"
+             BackgroundColor="{StaticResource MessengerBackground}">
+
+    <Grid RowDefinitions="Auto,*">
+        
+        <!-- Header avec informations du chantier -->
+        <Frame Grid.Row="0" 
+               BackgroundColor="{StaticResource MessengerWhite}" 
+               CornerRadius="0" 
+               HasShadow="True" 
+               Padding="20,15">
+            <Grid ColumnDefinitions="Auto,*,Auto">
+                <Border Grid.Column="0" 
+                        WidthRequest="50" 
+                        HeightRequest="50" 
+                        BackgroundColor="{StaticResource MessengerBlue}" 
+                        StrokeThickness="0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="25" />
+                    </Border.StrokeShape>
+                    <Label Text="🏗️" 
+                           FontSize="25" 
+                           HorizontalOptions="Center" 
+                           VerticalOptions="Center" />
+                </Border>
+                
+                <StackLayout Grid.Column="1" 
+                             VerticalOptions="Center" 
+                             Margin="15,0,0,0">
+                    <Label Text="Résidence Les Jardins" 
+                           FontSize="18" 
+                           FontAttributes="Bold" 
+                           TextColor="{StaticResource MessengerTextDark}" />
+                    <Label Text="23 tâches • 75% terminé" 
+                           FontSize="14" 
+                           TextColor="{StaticResource MessengerTextSecondary}" />
+                </StackLayout>
+                
+                <Button Grid.Column="2" 
+                        Text="➕" 
+                        BackgroundColor="{StaticResource MessengerBlue}" 
+                        TextColor="White" 
+                        CornerRadius="20" 
+                        WidthRequest="40" 
+                        HeightRequest="40" 
+                        FontSize="18" />
+            </Grid>
+        </Frame>
+
+        <!-- Zone Kanban avec colonnes -->
+        <ScrollView Grid.Row="1" Orientation="Horizontal" Padding="10,10,10,0">
+            <StackLayout Orientation="Horizontal" Spacing="15">
+                
+                <!-- Colonne À faire -->
+                <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="15" 
+                       WidthRequest="280">
+                    <StackLayout>
+                        <!-- Header de colonne -->
+                        <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,15">
+                            <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                <Border WidthRequest="4" 
+                                        HeightRequest="20" 
+                                        BackgroundColor="#FF6B35" 
+                                        VerticalOptions="Center" />
+                                <Label Text="À faire" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" 
+                                       VerticalOptions="Center" 
+                                       Margin="10,0,0,0" />
+                            </StackLayout>
+                            <Label Grid.Column="1" 
+                                   Text="5" 
+                                   FontSize="14" 
+                                   TextColor="{StaticResource MessengerTextSecondary}" 
+                                   VerticalOptions="Center" />
+                        </Grid>
+
+                        <!-- Tâches de la colonne -->
+                        <StackLayout Spacing="10">
+                            
+                            <!-- Tâche 1 -->
+                            <Frame BackgroundColor="{StaticResource MessengerBackground}" 
+                                   CornerRadius="10" 
+                                   HasShadow="False" 
+                                   Padding="15">
+                                <StackLayout>
+                                    <Grid ColumnDefinitions="*,Auto">
+                                        <Label Grid.Column="0" 
+                                               Text="Préparation du terrain" 
+                                               FontSize="14" 
+                                               FontAttributes="Bold" 
+                                               TextColor="{StaticResource MessengerTextDark}" />
+                                        <Border Grid.Column="1" 
+                                                WidthRequest="8" 
+                                                HeightRequest="8" 
+                                                BackgroundColor="#FF4444" 
+                                                VerticalOptions="Center">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="4" />
+                                            </Border.StrokeShape>
+                                        </Border>
+                                    </Grid>
+                                    <Label Text="Nivellement et préparation du sol pour les fondations" 
+                                           FontSize="12" 
+                                           TextColor="{StaticResource MessengerTextSecondary}" 
+                                           Margin="0,5,0,10" />
+                                    <Grid ColumnDefinitions="Auto,*,Auto">
+                                        <Border Grid.Column="0" 
+                                                WidthRequest="25" 
+                                                HeightRequest="25" 
+                                                BackgroundColor="{StaticResource MessengerBlue}" 
+                                                StrokeThickness="0">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="12" />
+                                            </Border.StrokeShape>
+                                            <Label Text="JD" 
+                                                   FontSize="10" 
+                                                   FontAttributes="Bold" 
+                                                   TextColor="White" 
+                                                   HorizontalOptions="Center" 
+                                                   VerticalOptions="Center" />
+                                        </Border>
+                                        <Label Grid.Column="2" 
+                                               Text="📅 15 Nov" 
+                                               FontSize="11" 
+                                               TextColor="{StaticResource MessengerTextSecondary}" 
+                                               VerticalOptions="Center" />
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+
+                            <!-- Tâche 2 -->
+                            <Frame BackgroundColor="{StaticResource MessengerBackground}" 
+                                   CornerRadius="10" 
+                                   HasShadow="False" 
+                                   Padding="15">
+                                <StackLayout>
+                                    <Grid ColumnDefinitions="*,Auto">
+                                        <Label Grid.Column="0" 
+                                               Text="Commande matériaux" 
+                                               FontSize="14" 
+                                               FontAttributes="Bold" 
+                                               TextColor="{StaticResource MessengerTextDark}" />
+                                        <Border Grid.Column="1" 
+                                                WidthRequest="8" 
+                                                HeightRequest="8" 
+                                                BackgroundColor="#FFA500" 
+                                                VerticalOptions="Center">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="4" />
+                                            </Border.StrokeShape>
+                                        </Border>
+                                    </Grid>
+                                    <Label Text="Commande béton et armatures pour les fondations" 
+                                           FontSize="12" 
+                                           TextColor="{StaticResource MessengerTextSecondary}" 
+                                           Margin="0,5,0,10" />
+                                    <Grid ColumnDefinitions="Auto,*,Auto">
+                                        <Border Grid.Column="0" 
+                                                WidthRequest="25" 
+                                                HeightRequest="25" 
+                                                BackgroundColor="#FF6B35" 
+                                                StrokeThickness="0">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="12" />
+                                            </Border.StrokeShape>
+                                            <Label Text="ML" 
+                                                   FontSize="10" 
+                                                   FontAttributes="Bold" 
+                                                   TextColor="White" 
+                                                   HorizontalOptions="Center" 
+                                                   VerticalOptions="Center" />
+                                        </Border>
+                                        <Label Grid.Column="2" 
+                                               Text="📅 18 Nov" 
+                                               FontSize="11" 
+                                               TextColor="{StaticResource MessengerTextSecondary}" 
+                                               VerticalOptions="Center" />
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Colonne En cours -->
+                <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="15" 
+                       WidthRequest="280">
+                    <StackLayout>
+                        <!-- Header de colonne -->
+                        <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,15">
+                            <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                <Border WidthRequest="4" 
+                                        HeightRequest="20" 
+                                        BackgroundColor="{StaticResource MessengerBlue}" 
+                                        VerticalOptions="Center" />
+                                <Label Text="En cours" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" 
+                                       VerticalOptions="Center" 
+                                       Margin="10,0,0,0" />
+                            </StackLayout>
+                            <Label Grid.Column="1" 
+                                   Text="3" 
+                                   FontSize="14" 
+                                   TextColor="{StaticResource MessengerTextSecondary}" 
+                                   VerticalOptions="Center" />
+                        </Grid>
+
+                        <!-- Tâches de la colonne -->
+                        <StackLayout Spacing="10">
+                            
+                            <!-- Tâche en cours -->
+                            <Frame BackgroundColor="{StaticResource MessengerBackground}" 
+                                   CornerRadius="10" 
+                                   HasShadow="False" 
+                                   Padding="15">
+                                <StackLayout>
+                                    <Grid ColumnDefinitions="*,Auto">
+                                        <Label Grid.Column="0" 
+                                               Text="Coulage fondations" 
+                                               FontSize="14" 
+                                               FontAttributes="Bold" 
+                                               TextColor="{StaticResource MessengerTextDark}" />
+                                        <Border Grid.Column="1" 
+                                                WidthRequest="8" 
+                                                HeightRequest="8" 
+                                                BackgroundColor="#FF4444" 
+                                                VerticalOptions="Center">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="4" />
+                                            </Border.StrokeShape>
+                                        </Border>
+                                    </Grid>
+                                    <Label Text="Coulage du béton pour les fondations principales" 
+                                           FontSize="12" 
+                                           TextColor="{StaticResource MessengerTextSecondary}" 
+                                           Margin="0,5,0,10" />
+                                    
+                                    <!-- Barre de progression -->
+                                    <ProgressBar Progress="0.6" 
+                                                 ProgressColor="{StaticResource MessengerBlue}" 
+                                                 Margin="0,5" />
+                                    <Label Text="60% terminé" 
+                                           FontSize="11" 
+                                           TextColor="{StaticResource MessengerTextSecondary}" 
+                                           HorizontalOptions="End" 
+                                           Margin="0,0,0,10" />
+                                    
+                                    <Grid ColumnDefinitions="Auto,*,Auto">
+                                        <Border Grid.Column="0" 
+                                                WidthRequest="25" 
+                                                HeightRequest="25" 
+                                                BackgroundColor="#4CAF50" 
+                                                StrokeThickness="0">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="12" />
+                                            </Border.StrokeShape>
+                                            <Label Text="PD" 
+                                                   FontSize="10" 
+                                                   FontAttributes="Bold" 
+                                                   TextColor="White" 
+                                                   HorizontalOptions="Center" 
+                                                   VerticalOptions="Center" />
+                                        </Border>
+                                        <Label Grid.Column="2" 
+                                               Text="📅 Aujourd'hui" 
+                                               FontSize="11" 
+                                               TextColor="{StaticResource MessengerBlue}" 
+                                               FontAttributes="Bold" 
+                                               VerticalOptions="Center" />
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Colonne En révision -->
+                <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="15" 
+                       WidthRequest="280">
+                    <StackLayout>
+                        <!-- Header de colonne -->
+                        <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,15">
+                            <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                <Border WidthRequest="4" 
+                                        HeightRequest="20" 
+                                        BackgroundColor="#FFA500" 
+                                        VerticalOptions="Center" />
+                                <Label Text="En révision" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" 
+                                       VerticalOptions="Center" 
+                                       Margin="10,0,0,0" />
+                            </StackLayout>
+                            <Label Grid.Column="1" 
+                                   Text="2" 
+                                   FontSize="14" 
+                                   TextColor="{StaticResource MessengerTextSecondary}" 
+                                   VerticalOptions="Center" />
+                        </Grid>
+
+                        <!-- Tâches de la colonne -->
+                        <StackLayout Spacing="10">
+                            
+                            <!-- Tâche en révision -->
+                            <Frame BackgroundColor="{StaticResource MessengerBackground}" 
+                                   CornerRadius="10" 
+                                   HasShadow="False" 
+                                   Padding="15">
+                                <StackLayout>
+                                    <Grid ColumnDefinitions="*,Auto">
+                                        <Label Grid.Column="0" 
+                                               Text="Contrôle qualité béton" 
+                                               FontSize="14" 
+                                               FontAttributes="Bold" 
+                                               TextColor="{StaticResource MessengerTextDark}" />
+                                        <Border Grid.Column="1" 
+                                                WidthRequest="8" 
+                                                HeightRequest="8" 
+                                                BackgroundColor="#4CAF50" 
+                                                VerticalOptions="Center">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="4" />
+                                            </Border.StrokeShape>
+                                        </Border>
+                                    </Grid>
+                                    <Label Text="Vérification de la conformité du coulage" 
+                                           FontSize="12" 
+                                           TextColor="{StaticResource MessengerTextSecondary}" 
+                                           Margin="0,5,0,10" />
+                                    <Grid ColumnDefinitions="Auto,*,Auto">
+                                        <Border Grid.Column="0" 
+                                                WidthRequest="25" 
+                                                HeightRequest="25" 
+                                                BackgroundColor="#9C27B0" 
+                                                StrokeThickness="0">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="12" />
+                                            </Border.StrokeShape>
+                                            <Label Text="AR" 
+                                                   FontSize="10" 
+                                                   FontAttributes="Bold" 
+                                                   TextColor="White" 
+                                                   HorizontalOptions="Center" 
+                                                   VerticalOptions="Center" />
+                                        </Border>
+                                        <Label Grid.Column="2" 
+                                               Text="📅 12 Nov" 
+                                               FontSize="11" 
+                                               TextColor="{StaticResource MessengerTextSecondary}" 
+                                               VerticalOptions="Center" />
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Colonne Terminé -->
+                <Frame BackgroundColor="{StaticResource MessengerWhite}" 
+                       CornerRadius="15" 
+                       HasShadow="True" 
+                       Padding="15" 
+                       WidthRequest="280">
+                    <StackLayout>
+                        <!-- Header de colonne -->
+                        <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,15">
+                            <StackLayout Grid.Column="0" Orientation="Horizontal">
+                                <Border WidthRequest="4" 
+                                        HeightRequest="20" 
+                                        BackgroundColor="#4CAF50" 
+                                        VerticalOptions="Center" />
+                                <Label Text="Terminé" 
+                                       FontSize="16" 
+                                       FontAttributes="Bold" 
+                                       TextColor="{StaticResource MessengerTextDark}" 
+                                       VerticalOptions="Center" 
+                                       Margin="10,0,0,0" />
+                            </StackLayout>
+                            <Label Grid.Column="1" 
+                                   Text="13" 
+                                   FontSize="14" 
+                                   TextColor="{StaticResource MessengerTextSecondary}" 
+                                   VerticalOptions="Center" />
+                        </Grid>
+
+                        <!-- Tâches de la colonne -->
+                        <StackLayout Spacing="10">
+                            
+                            <!-- Tâche terminée -->
+                            <Frame BackgroundColor="{StaticResource MessengerBackground}" 
+                                   CornerRadius="10" 
+                                   HasShadow="False" 
+                                   Padding="15" 
+                                   Opacity="0.8">
+                                <StackLayout>
+                                    <Grid ColumnDefinitions="*,Auto">
+                                        <Label Grid.Column="0" 
+                                               Text="Étude de sol" 
+                                               FontSize="14" 
+                                               FontAttributes="Bold" 
+                                               TextColor="{StaticResource MessengerTextDark}" />
+                                        <Label Grid.Column="1" 
+                                               Text="✅" 
+                                               FontSize="16" 
+                                               VerticalOptions="Center" />
+                                    </Grid>
+                                    <Label Text="Analyse géotechnique du terrain terminée" 
+                                           FontSize="12" 
+                                           TextColor="{StaticResource MessengerTextSecondary}" 
+                                           Margin="0,5,0,10" />
+                                    <Grid ColumnDefinitions="Auto,*,Auto">
+                                        <Border Grid.Column="0" 
+                                                WidthRequest="25" 
+                                                HeightRequest="25" 
+                                                BackgroundColor="#607D8B" 
+                                                StrokeThickness="0">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="12" />
+                                            </Border.StrokeShape>
+                                            <Label Text="IG" 
+                                                   FontSize="10" 
+                                                   FontAttributes="Bold" 
+                                                   TextColor="White" 
+                                                   HorizontalOptions="Center" 
+                                                   VerticalOptions="Center" />
+                                        </Border>
+                                        <Label Grid.Column="2" 
+                                               Text="📅 5 Nov" 
+                                               FontSize="11" 
+                                               TextColor="{StaticResource MessengerTextSecondary}" 
+                                               VerticalOptions="Center" />
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

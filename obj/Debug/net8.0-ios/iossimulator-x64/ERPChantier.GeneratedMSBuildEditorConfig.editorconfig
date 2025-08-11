@@ -1,0 +1,115 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ERPChantier
+build_property.ProjectDir = C:\Users\rboughediri\source\repos\ERPChantier\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/rboughediri/source/repos/ERPChantier/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/rboughediri/source/repos/ERPChantier/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/rboughediri/source/repos/ERPChantier/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/rboughediri/source/repos/ERPChantier/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/rboughediri/source/repos/ERPChantier/Resources/Styles/MessengerStyles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.Resources.Styles.MessengerStyles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\MessengerStyles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\MessengerStyles.xaml
+
+[C:/Users/rboughediri/source/repos/ERPChantier/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/rboughediri/source/repos/ERPChantier/Views/CalendarPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.Views.CalendarPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CalendarPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CalendarPage.xaml
+
+[C:/Users/rboughediri/source/repos/ERPChantier/Views/ChantierDetailPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.Views.ChantierDetailPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ChantierDetailPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ChantierDetailPage.xaml
+
+[C:/Users/rboughediri/source/repos/ERPChantier/Views/ChantiersPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.Views.ChantiersPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ChantiersPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ChantiersPage.xaml
+
+[C:/Users/rboughediri/source/repos/ERPChantier/Views/ChatPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.Views.ChatPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ChatPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ChatPage.xaml
+
+[C:/Users/rboughediri/source/repos/ERPChantier/Views/DocumentsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.Views.DocumentsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\DocumentsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\DocumentsPage.xaml
+
+[C:/Users/rboughediri/source/repos/ERPChantier/Views/KanbanPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.Views.KanbanPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\KanbanPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\KanbanPage.xaml
+
+[C:/Users/rboughediri/source/repos/ERPChantier/Views/ProfilPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.Views.ProfilPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ProfilPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ProfilPage.xaml
+
+[C:/Users/rboughediri/source/repos/ERPChantier/Views/ReportsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.Views.ReportsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ReportsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ReportsPage.xaml
+
+[C:/Users/rboughediri/source/repos/ERPChantier/Views/TaskListPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.Views.TaskListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\TaskListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\TaskListPage.xaml
+
+[C:/Users/rboughediri/source/repos/ERPChantier/Views/TeamPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = ERPChantier.Views.TeamPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\TeamPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\TeamPage.xaml

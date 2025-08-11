@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ERPChantier.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ERPChantier"
+    xmlns:views="clr-namespace:ERPChantier.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="ERPChantier">
+
+    <TabBar>
+        <ShellContent
+            Title="Accueil"
+            Icon="home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+
+        <ShellContent
+            Title="Chantiers"
+            Icon="build"
+            ContentTemplate="{DataTemplate views:ChantiersPage}"
+            Route="ChantiersPage" />
+
+        <ShellContent
+            Title="Chat"
+            Icon="chat"
+            ContentTemplate="{DataTemplate views:ChatPage}"
+            Route="ChatPage" />
+
+        <ShellContent
+            Title="Profil"
+            Icon="person"
+            ContentTemplate="{DataTemplate views:ProfilPage}"
+            Route="ProfilPage" />
+    </TabBar>
+
+    <!-- Pages supplémentaires pour la navigation -->
+    <ShellContent
+        ContentTemplate="{DataTemplate views:ChantierDetailPage}"
+        Route="chantierdetail" />
+
+</Shell>

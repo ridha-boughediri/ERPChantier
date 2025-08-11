@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ERPChantier.Views.ProfilPage"
+             Title="Profil">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            
+            <Label
+                Text="Mon Profil"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Gérez vos informations et paramètres"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2" />
+
+            <Button
+                x:Name="SettingsBtn"
+                Text="Paramètres" 
+                SemanticProperties.Hint="Bouton pour accéder aux paramètres"
+                HorizontalOptions="Fill" />
+                
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
