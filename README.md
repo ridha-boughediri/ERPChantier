@@ -185,9 +185,9 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 **Ridha Boughediri**
 - GitHub: [@ridha-boughediri](https://github.com/ridha-boughediri)
-- Email: [votre-email@example.com]
+- Email: ridhaboughediri@gmail.com
 
-## 🔄 Roadmap
+## 🔄 Roadmap encours de construction 
 
 - [ ] Intégration avec des APIs externes
 - [ ] Mode hors ligne avec synchronisation
